@@ -2,7 +2,6 @@
 
 Analyze WhatsApp chat exports with interactive dashboards: basic stats, sentiment, timelines, busiest users, word clouds, emoji usage, and heatmaps — all in Streamlit.
 
-![App Screenshot](docs/screenshot.png)
 
 ---
  
