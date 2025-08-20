@@ -5,7 +5,7 @@ Analyze WhatsApp chat exports with interactive dashboards: basic stats, sentimen
 ![App Screenshot](docs/screenshot.png)
 
 ---
-
+ 
 ## ✨ Features
 
 * **Upload** WhatsApp `.txt` export (Android/iOS supported)
