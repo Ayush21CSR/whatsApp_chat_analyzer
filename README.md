@@ -19,18 +19,6 @@ Analyze WhatsApp chat exports with interactive dashboards: basic stats, sentimen
 
 ---
 
-## 🧭 Pipeline (High Level)
-
-```text
-Upload .txt → Preprocess to DataFrame → Choose User → Pick Analysis →
-Compute Metrics (helper.py) → Visualize (matplotlib/seaborn) → Streamlit UI
-```
-
-You can include this diagram in `docs/`:
-
-![Pipeline](docs/pipeline.png)
-
----
 
 ## 🗂️ Project Structure
 
