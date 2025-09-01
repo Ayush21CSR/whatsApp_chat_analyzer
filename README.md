@@ -122,26 +122,6 @@ Typical parsing steps:
 
 ---
 
-## 🛠️ Metrics & NLP (`helper.py`)
-
-Expected functions used by `app.py` (adapt to your implementation):
-
-* `fetch_stats(selected_user, df)` → `(num_messages, num_words, num_media, num_links)`
-* `sentiment_analysis(selected_user, df)` → dict with percentages & average VADER scores
-* `sentiment_timeline(selected_user, df)` → DataFrame(date, sentiment\_score)
-* `monthly_timeline(selected_user, df)` → counts per month
-* `daily_timeline(selected_user, df)` → counts per day
-* `week_activity_map(selected_user, df)` → counts per weekday
-* `month_activity_map(selected_user, df)` → counts per month
-* `most_busy_users(df)` → (Series for chart, DataFrame table)
-* `create_wordcloud(selected_user, df)` → `WordCloud` image
-* `most_common_words(selected_user, df)` → DataFrame(word, count)
-* `emoji_helper(selected_user, df)` → DataFrame(emoji, count)
-* `get_extreme_sentiment_messages(selected_user, df, sentiment_type, top_n)` → list\[(msg, score)]
-
-> Add/rename as per your code; update `app.py` accordingly.
-
----
 
 ## 🧪 Usage Walkthrough
 
@@ -153,46 +133,3 @@ Expected functions used by `app.py` (adapt to your implementation):
 
 ---
 
-## 🧯 Troubleshooting
-
-* **Encoding issues** (weird characters like `Ã©`): ensure you decode as **UTF‑8** in `preprocessor`.
-* **Datetime parse errors**: WhatsApp exports vary by locale; add multiple `pd.to_datetime` formats (12/24h, comma vs hyphen) and fallback parsing.
-* **Large chats feel slow**: precompute features, cache with `@st.cache_data`, or sample for heavy plots (wordcloud).
-* **Missing users**: some messages are system notifications → filtered as `group_notification`.
-* **No emojis detected**: ensure you’re not stripping non-ASCII; use `emoji` lib and count by codepoint.
-
----
-
-## 🔒 Privacy
-
-All analysis happens locally in your browser session unless you add cloud storage. Do **not** upload sensitive chats to third‑party servers.
-
----
-
-## 🗺️ Roadmap (Ideas)
-
-* Export **PDF/CSV** reports from the dashboard
-* Per-user **conversation networks** (mentions/replies)
-* **Topic modeling** / keyword trends over time
-* Multi-chat aggregation & comparisons
-* Advanced **toxicity** / moderation scoring
-
----
-
-## 📜 License
-
-MIT (or your preferred license). Add a `LICENSE` file.
-
----
-
-## 🙏 Acknowledgments
-
-* VADER Sentiment (Hutto & Gilbert)
-* Streamlit community
-* Matplotlib / Seaborn / WordCloud
-
----
-
-## 🤝 Contributing
-
-PRs welcome! Please open an issue with a minimal reproducible example.
